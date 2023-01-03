@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C41BF1CD-91D1-4999-B52C-D5CDCCD12702}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hastane_Otomasyonu</RootNamespace>
+    <AssemblyName>Hastane_Otomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="acilGörüntüle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acilGörüntüle.Designer.cs">
+      <DependentUpon>acilGörüntüle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bekleyenHasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bekleyenHasta.Designer.cs">
+      <DependentUpon>bekleyenHasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doktorbilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doktorbilgi.Designer.cs">
+      <DependentUpon>doktorbilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doktorgiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doktorgiris.Designer.cs">
+      <DependentUpon>doktorgiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doktorPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doktorPaneli.Designer.cs">
+      <DependentUpon>doktorPaneli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="anasayfa.Designer.cs">
+      <DependentUpon>anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doktorTahlilsonuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doktorTahlilsonuc.Designer.cs">
+      <DependentUpon>doktorTahlilsonuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hastaBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hastaBilgi.Designer.cs">
+      <DependentUpon>hastaBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hastagiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hastagiris.Designer.cs">
+      <DependentUpon>hastagiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hastaKabul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hastaKabul.Designer.cs">
+      <DependentUpon>hastaKabul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HastaneOtomasyonuDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HastaneOtomasyonuDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hastaPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hastaPaneli.Designer.cs">
+      <DependentUpon>hastaPaneli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hastaTahlil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hastaTahlil.Designer.cs">
+      <DependentUpon>hastaTahlil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="iletişim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="iletişim.Designer.cs">
+      <DependentUpon>iletişim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kayıt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kayıt.Designer.cs">
+      <DependentUpon>kayıt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="laboratuvar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="laboratuvar.Designer.cs">
+      <DependentUpon>laboratuvar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="randevuAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="randevuAl.Designer.cs">
+      <DependentUpon>randevuAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="randevuGörüntüle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="randevuGörüntüle.Designer.cs">
+      <DependentUpon>randevuGörüntüle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="randevuMuayne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="randevuMuayne.Designer.cs">
+      <DependentUpon>randevuMuayne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yönetici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yönetici.Designer.cs">
+      <DependentUpon>yönetici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yöneticiBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yöneticiBilgi.Designer.cs">
+      <DependentUpon>yöneticiBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yöneticiContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yöneticiContact.Designer.cs">
+      <DependentUpon>yöneticiContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yöneticiDoktor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yöneticiDoktor.Designer.cs">
+      <DependentUpon>yöneticiDoktor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yöneticigiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yöneticigiris.Designer.cs">
+      <DependentUpon>yöneticigiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yöneticiHasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yöneticiHasta.Designer.cs">
+      <DependentUpon>yöneticiHasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yöneticiKlinik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yöneticiKlinik.Designer.cs">
+      <DependentUpon>yöneticiKlinik.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="acilGörüntüle.resx">
+      <DependentUpon>acilGörüntüle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bekleyenHasta.resx">
+      <DependentUpon>bekleyenHasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doktorbilgi.resx">
+      <DependentUpon>doktorbilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doktorgiris.resx">
+      <DependentUpon>doktorgiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doktorPaneli.resx">
+      <DependentUpon>doktorPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anasayfa.resx">
+      <DependentUpon>anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doktorTahlilsonuc.resx">
+      <DependentUpon>doktorTahlilsonuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hastaBilgi.resx">
+      <DependentUpon>hastaBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hastagiris.resx">
+      <DependentUpon>hastagiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hastaKabul.resx">
+      <DependentUpon>hastaKabul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hastaPaneli.resx">
+      <DependentUpon>hastaPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hastaTahlil.resx">
+      <DependentUpon>hastaTahlil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="iletişim.resx">
+      <DependentUpon>iletişim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kayıt.resx">
+      <DependentUpon>kayıt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laboratuvar.resx">
+      <DependentUpon>laboratuvar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="randevuAl.resx">
+      <DependentUpon>randevuAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="randevuGörüntüle.resx">
+      <DependentUpon>randevuGörüntüle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="randevuMuayne.resx">
+      <DependentUpon>randevuMuayne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yönetici.resx">
+      <DependentUpon>yönetici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yöneticiBilgi.resx">
+      <DependentUpon>yöneticiBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yöneticiContact.resx">
+      <DependentUpon>yöneticiContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yöneticiDoktor.resx">
+      <DependentUpon>yöneticiDoktor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yöneticigiris.resx">
+      <DependentUpon>yöneticigiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yöneticiHasta.resx">
+      <DependentUpon>yöneticiHasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yöneticiKlinik.resx">
+      <DependentUpon>yöneticiKlinik.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="HastaneOtomasyonuDbDataSet.xsc">
+      <DependentUpon>HastaneOtomasyonuDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HastaneOtomasyonuDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HastaneOtomasyonuDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HastaneOtomasyonuDbDataSet.xss">
+      <DependentUpon>HastaneOtomasyonuDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saglik_bakanligi_yatay_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4386464.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210653.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medical-doctor-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medical-doctor-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eppendorf-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-manager-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fever-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fever-1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\İL LOGOLARI KIRMIZI YATAY-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lab-g9c4a5ca0d_640.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kkkpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saglikbakanligi_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saglikbakanligi_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4386467 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210557.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210557 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-nataliya-vaitkevich-5863397 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210653 %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210653 %283%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-administrator-male-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-survey-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4386464 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210610 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-survey-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210610 %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210610 %281%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-karolina-grabowska-4210610 %281%293.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
